@@ -1,6 +1,4 @@
 
-
-
 const array = require('../assets/data')
 exports.handler = async (event,context)=>{
 
@@ -11,3 +9,4 @@ exports.handler = async (event,context)=>{
     }
     
     }
+
