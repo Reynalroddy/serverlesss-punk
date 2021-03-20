@@ -28,15 +28,16 @@ exports.handler = async (event,context)=>{
     // const {name,email,message,subject} = event.body
     console.log(JSON.parse(event.body),'x')
 const res = JSON.parse(event.body)
-const {name,email,message,subject} = res.data
-    if(!name || !email||!message|| !subject){
+const {name,email,message,subject} = res
+console.log(name,email,subject,message)
+/*     if(!name || !email||!message|| !subject){
 
         return {
-            headers:{'Access-Control-Allow-Origin':'*'},
+          
                 statusCode:400,
                 body:'provide all values'
             }
-    }
+    } */
     
 
 
@@ -48,15 +49,17 @@ to:"dolapoajayi28@gmail.com",
 
 subject: "pass",
 
-html:`<p>${message}</p>`
+html:`guy`
 
 }
-
+/* 
 try {
     
     await transporter.sendMail({...data})
     return {
-        headers:{'Access-Control-Allow-Origin':'*'},
+        headers:{
+            'Access-Control-Allow-Origin': '*'
+        },
             statusCode:200,
             body:'success'
         }
@@ -65,13 +68,19 @@ try {
 } catch (error) {
     
     return {
-        headers:{'Access-Control-Allow-Origin':'*'},
+
             statusCode:400,
             body:'error'
         }
 }
-
-
+ */
+return {
+    headers:{
+        'Access-Control-Allow-Origin': '*'
+    },
+        statusCode:200,
+        body:'success'
+}
 
 
 
