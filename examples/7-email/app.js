@@ -26,7 +26,7 @@ const message = messageInput.value
 const data = {name,email,subject,message}
 console.log(data)
 try {
-    await axios.post('/api/7-email',JSON.stringify(data))
+    await axios.post('https://quirky-mestorf-34b55c.netlify.app/api/7-email',data)
 
     nameInput.value = '';
     emailInput.value = '';
