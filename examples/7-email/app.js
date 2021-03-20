@@ -23,10 +23,10 @@ const name = nameInput.value
 const email = emailInput.value 
 const subject = subjectInput.value 
 const message = messageInput.value 
-const data = {name,email,subject,message}
+const data = {"name":name,"email":email,"subject":subject,"message":message}
 console.log(data)
 try {
-    await axios.post('/api/7-email',data)
+    await axios.post('/api/7-email',JSON.stringify(data))
 
     nameInput.value = '';
     emailInput.value = '';
