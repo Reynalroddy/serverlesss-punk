@@ -13,9 +13,11 @@ const transporter = nodemailer.createTransport({
 
 exports.handler = async (event,context)=>{
 
-
-    // const method =event.httpMethod;
-   /*  if (method !== POST){
+    console.log(event)
+    console.log(event.httpMethod)
+    
+     const method = event.httpMethod;
+     if (method !== "POST"){
 
         return {
             headers:{'Access-Control-Allow-Origin':'*'},
@@ -23,13 +25,13 @@ exports.handler = async (event,context)=>{
                 body:'only post request is allowed'
             }
 
-    } */
+    }  
 
-    // const {name,email,message,subject} = event.body
-    console.log(JSON.parse(event.body),'x')
+    const {name,email,message,subject} = JSON.parse(event.body)
+   /*  console.log(JSON.parse(event.body),'x')
 const res = JSON.parse(event.body)
-const {name,email,message,subject} = res
-console.log(name,email,subject,message)
+const {name,email,message,subject} = res*/
+console.log(name,email,subject,message) 
 /*     if(!name || !email||!message|| !subject){
 
         return {
@@ -81,7 +83,5 @@ return {
         statusCode:200,
         body:'success'
 }
-
-
 
     }
