@@ -23,10 +23,10 @@ const name = nameInput.value
 const email = emailInput.value 
 const subject = subjectInput.value 
 const message = messageInput.value 
-const data = {name,email,subject,message}
+// const data = {name,email,subject,message}
 console.log(data)
 try {
-    await axios.post('https://quirky-mestorf-34b55c.netlify.app/api/7-email',data)
+    await axios.post('https://quirky-mestorf-34b55c.netlify.app/api/7-email',{name,email,subject,message})
 
     nameInput.value = '';
     emailInput.value = '';
